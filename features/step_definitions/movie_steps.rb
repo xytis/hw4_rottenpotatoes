@@ -34,7 +34,7 @@ Then /I should see (all|none)+ of the movies/ do |selector|
   assert_equal( ((selector == 'all' and 11) or 1), page.all("table#movies tr").count )
 end
 
-Then /The (.*) of "(.*)" should be "(.*)"/ do |field, title, value|
-  assert_equal(Movie.find_by_title(title).(send field), value)
+Then /the (.*) of "(.*)" should be "(.*)"/ do |field, title, value|
+  assert_equal((Movie.find_by_title(title).send field), value)
 end
 
